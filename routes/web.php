@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CompanyExcellenceController;
+use App\Http\Controllers\CompanyProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('CompanyProfile.index');
-});
+Route::resource('company_profiles', CompanyProfileController::class);
+Route::resource('company_excellences', CompanyExcellenceController::class);

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CompanyProfile;
+use App\Models\CompanyExcellence;
 use Illuminate\Http\Request;
 
-class CompanyProfileController extends Controller
+class CompanyExcellenceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('CompanyProfile.index');
+        return view('CompanyExellence.index');
     }
 
     /**
@@ -34,7 +34,7 @@ class CompanyProfileController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CompanyProfile $companyProfile)
+    public function show(CompanyExcellence $companyExcellence)
     {
         //
     }
@@ -42,7 +42,7 @@ class CompanyProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CompanyProfile $companyProfile)
+    public function edit(CompanyExcellence $companyExcellence)
     {
         //
     }
@@ -50,7 +50,7 @@ class CompanyProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompanyProfile $companyProfile)
+    public function update(Request $request, CompanyExcellence $companyExcellence)
     {
         //
     }
@@ -58,7 +58,7 @@ class CompanyProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompanyProfile $companyProfile)
+    public function destroy(CompanyExcellence $companyExcellence)
     {
         //
     }
