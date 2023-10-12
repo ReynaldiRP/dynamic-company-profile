@@ -16,7 +16,7 @@
 
         <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
             <ul class="flex flex-col pl-0 mb-0">
-                
+
                 <x-sidebar-menu-item route="company_profiles.index" label="Profil Perusahaan"
                     currentRoute="{{ request()->route()->getName() }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12px" heigth="12px" viewBox="0 0 384 512">

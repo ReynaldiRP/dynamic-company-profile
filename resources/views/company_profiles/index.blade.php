@@ -1,35 +1,38 @@
-@extends('layouts.app')
+@extends('layouts.dashboard.app')
 @include('layouts.navbars.sidebar')
 @include('layouts.navbars.nav')
 @section('cards')
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">
             <div class="w-full flex justify-center p-3 bg-white shadow-soft-lg rounded-lg font-poppins ">
-                <h3>Keunggulan Perusahaan</h3>
+                <h3>Profil Perusahaan</h3>
             </div>
             {{-- Form Company Profile --}}
             <section class="h-full flex flex-col  bg-white shadow-soft-lg rounded-lg font-poppins">
                 <form action="" method="post">
-                    <div class="flex flex-col p-4 gap-1" id="input-exellence-title">
-                        <label for="exellence-title" class="text-base text-slate-600 font-semibold">Judul Keunggulan
-                            Perusahaan</label>
-                        <input type="text" id="exellence-title" name="exellence-title"
-                            placeholder="Judul Keunggulan Perusahaan"
+                    <div class="flex flex-col p-4 gap-1" id="input-name">
+                        <label for="name" class="text-base text-slate-600 font-semibold">Nama Perusahaan</label>
+                        <input type="text" id="name" name="name" placeholder="Nama Perusahaan"
                             class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
                     </div>
-                    <div class="flex flex-col p-4 gap-1" id="input-exellence-description">
-                        <label for="exellence-description" class="text-base text-slate-600 font-semibold">Deskripsi
-                            Keunggulan
-                            Perusahaan</label>
-                        <textarea name="exellence-description" id="exellence-description" rows="5"
-                            placeholder="Deskripsi Keunggulan Perusahaan"
+                    <div class="flex flex-col p-4 gap-1" id="input-description">
+                        <label for="description" class="text-base text-slate-600 font-semibold">Deskripsi Perusahaan</label>
+                        <textarea name="description" id="description" rows="5" placeholder="Deskripsi Perusahaan"
                             class="focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none"></textarea>
                     </div>
-                    <div class="flex flex-col p-4 gap-1" id="input-exellence-img">
-                        <label for="exellence-img" class="text-base text-slate-600 font-semibold">Gambar Keunggulan
-                            Perusahaan</label>
-                        <input type="file" id="exellence-img" name="exellence-img"
-                            placeholder="Gambar Keunggulan Perusahaan"
+                    <div class="flex flex-col p-4 gap-1" id="input-address">
+                        <label for="address" class="text-base text-slate-600 font-semibold">Alamat Perusahaan</label>
+                        <input type="text" id="address" name="address" placeholder="Alamat Perusahaan"
+                            class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                    </div>
+                    <div class="flex flex-col p-4 gap-1" id="input-phone">
+                        <label for="phone" class="text-base text-slate-600 font-semibold">Nomor Perusahaan</label>
+                        <input type="number" id="phone" name="phone" placeholder="Nomor Perusahaan"
+                            class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                    </div>
+                    <div class="flex flex-col p-4 gap-1" id="input-email">
+                        <label for="email" class="text-base text-slate-600 font-semibold">Email Perusahaan</label>
+                        <input type="email" id="email" name="email" placeholder="Email Perusahaan"
                             class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
                     </div>
                     <div class="flex justify-end p-4 gap-1" id="btn-group">

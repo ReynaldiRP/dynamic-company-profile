@@ -12,7 +12,7 @@ class CompanyProfileController extends Controller
      */
     public function index()
     {
-        return view('CompanyProfile.index');
+        return view('company_profiles.index');
     }
 
     /**
