@@ -12,7 +12,7 @@ class CompanyHistoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('company_histories.index');
     }
 
     /**

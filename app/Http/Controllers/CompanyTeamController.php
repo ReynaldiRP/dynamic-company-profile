@@ -12,7 +12,7 @@ class CompanyTeamController extends Controller
      */
     public function index()
     {
-        //
+        return view('company_teams.index');
     }
 
     /**

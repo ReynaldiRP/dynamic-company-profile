@@ -12,7 +12,7 @@ class CompanyProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('company_projects.index');
     }
 
     /**

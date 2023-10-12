@@ -12,7 +12,7 @@ class CompanyFaqController extends Controller
      */
     public function index()
     {
-        //
+        return view('company_faqs.index');
     }
 
     /**
