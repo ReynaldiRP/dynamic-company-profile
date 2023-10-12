@@ -1,8 +1,3 @@
-{{-- @php
-    dd($currentRoute);
-    dd($route);
-@endphp --}}
-
 <li class="mt-0.5 w-full">
     <a class="py-2.7 {{ $currentRoute == $route ? 'bg-white shadow-soft-xl' : '' }} text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg  px-4 font-semibold text-slate-700 transition-colors"
         href="{{ route($route) }}">
