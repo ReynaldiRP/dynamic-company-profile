@@ -8,6 +8,8 @@ use App\Services\CompanyExcellenceService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class CompanyExcellenceController extends Controller
 {
@@ -39,7 +41,7 @@ class CompanyExcellenceController extends Controller
     {
         try {
             $this->companyExcellenceService->createCompanyExcellence($request->validated());
-            return redirect()->back();
+            return redirect()->back()->with('toast_success', 'Berhasil menambahkan data');
         } catch (ValidationException $th) {
             return redirect()->back()
                 ->withErrors($th->validator)
