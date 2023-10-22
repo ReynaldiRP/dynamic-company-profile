@@ -1,6 +1,7 @@
 @extends('layouts.dashboard.app')
 @include('layouts.navbars.sidebar')
 @include('layouts.navbars.nav')
+@include('sweetalert::alert')
 @section('cards')
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">
@@ -105,7 +106,7 @@
     <script>
         $(document).ready(function() {
             setTimeout(() => {
-                $('.error-alert').hide(500);
+                $('.error-alert').hide(1000);
             }, 1000);
         });
     </script>
