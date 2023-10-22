@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanyExcellence extends Model
 {
-    protected $table = 'company_profiles';
+    protected $table = 'company_excellences';
     protected $fillable = [
-        'name', 'description',
-        'address', 'phone', 'email', 'website_logo_url'
+        'title', 'description', 'image_url'
     ];
 }

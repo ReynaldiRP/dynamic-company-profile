@@ -9,28 +9,41 @@
             </div>
             {{-- Form Company Profile --}}
             <section class="h-full flex flex-col  bg-white shadow-soft-lg rounded-lg font-poppins">
-                <form action="" method="post">
-                    <div class="flex flex-col p-4 gap-1" id="input-exellence-title">
-                        <label for="exellence-title" class="text-base text-slate-600 font-semibold">Judul Keunggulan
+                <form action="{{ route('company_excellences.store') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="flex flex-col p-4 gap-1" id="input-excellence-title">
+                        <label for="excellence-title" class="text-base text-slate-600 font-semibold">Judul Keunggulan
                             Perusahaan</label>
-                        <input type="text" id="exellence-title" name="exellence-title"
+                        <input type="text" id="excellence-title" name="excellence-title"
                             placeholder="Judul Keunggulan Perusahaan"
                             class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                        @error('excellence-title')
+                            <div class="error-alert relative w-full mt-3 p-4 text-white bg-red-500 rounded-lg">
+                                {{ $message }}</div>
+                        @enderror
                     </div>
-                    <div class="flex flex-col p-4 gap-1" id="input-exellence-description">
-                        <label for="exellence-description" class="text-base text-slate-600 font-semibold">Deskripsi
+                    <div class="flex flex-col p-4 gap-1" id="input-excellence-description">
+                        <label for="excellence-description" class="text-base text-slate-600 font-semibold">Deskripsi
                             Keunggulan
                             Perusahaan</label>
-                        <textarea name="exellence-description" id="exellence-description" rows="5"
+                        <textarea name="excellence-description" id="excellence-description" rows="5"
                             placeholder="Deskripsi Keunggulan Perusahaan"
                             class="focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none"></textarea>
+                        @error('excellence-description')
+                            <div class="error-alert relative w-full mt-3 p-4 text-white bg-red-500 rounded-lg">
+                                {{ $message }}</div>
+                        @enderror
                     </div>
-                    <div class="flex flex-col p-4 gap-1" id="input-exellence-img">
-                        <label for="exellence-img" class="text-base text-slate-600 font-semibold">Gambar Keunggulan
+                    <div class="flex flex-col p-4 gap-1" id="input-excellence-img">
+                        <label for="excellence-img" class="text-base text-slate-600 font-semibold">Gambar Keunggulan
                             Perusahaan</label>
-                        <input type="file" id="exellence-img" name="exellence-img"
+                        <input type="file" id="excellence-img" name="excellence-img"
                             placeholder="Gambar Keunggulan Perusahaan"
                             class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                        @error('excellence-img')
+                            <div class="error-alert relative w-full mt-3 p-4 text-white bg-red-500 rounded-lg">
+                                {{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="flex justify-end p-4 gap-1" id="btn-group">
                         <button type="submit"
@@ -50,37 +63,36 @@
                                 <tr>
                                     <th
                                         class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                        Nama Perusahaan</th>
+                                        Judul Keunggulan Perusahaan</th>
                                     <th
                                         class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                        Deskripsi Perusahaan</th>
+                                        Deskripsi Keunggulan Perusahaan</th>
                                     <th
                                         class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                        Alamat Perusahaan</th>
+                                        Gambar Keunggulan Perusahaan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td
-                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <div class="flex px-2 py-1">
-                                            <div class="flex flex-col justify-center">
-                                                <h6 class="mb-0 leading-normal text-sm"></h6>
-                                                <p class="mb-0 leading-tight text-xs text-slate-400">
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <p class="mb-0 font-semibold leading-tight text-xs"></p>
-                                        <p class="mb-0 leading-tight text-xs text-slate-400"></p>
-                                    </td>
-                                    <td
-                                        class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
-                                    </td>
-                                </tr>
-
+                                @foreach ($companyExcellence as $item)
+                                    <tr>
+                                        <td
+                                            class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                            <p class="mb-0 ml-4 leading-tight text-xs text-slate-400">
+                                                {{ $item->title }}
+                                            </p>
+                                        </td>
+                                        <td
+                                            class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                            <p class="mb-0 leading-tight text-xs text-slate-400">{{ $item->description }}
+                                            </p>
+                                        </td>
+                                        <td
+                                            class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
+                                            <img class="inline-flex items-center justify-center w-20 h-20 mr-2 text-white transition-all duration-200 ease-in-out text-sm rounded-xl"
+                                                src="{{ $item->image_url }}" alt="default img">
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -89,3 +101,12 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            setTimeout(() => {
+                $('.error-alert').hide(500);
+            }, 1000);
+        });
+    </script>
+@endpush

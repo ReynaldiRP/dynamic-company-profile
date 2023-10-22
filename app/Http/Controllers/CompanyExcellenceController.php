@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoredCompanyExcellence;
 use App\Models\CompanyExcellence;
+use App\Services\CompanyExcellenceService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class CompanyExcellenceController extends Controller
 {
+    public function __construct(private CompanyExcellenceService $companyExcellenceService)
+    {
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('company_exellences.index');
+        $companyExcellence = CompanyExcellence::all();
+        return view('company_exellences.index', ['companyExcellence' => $companyExcellence]);
     }
 
     /**
@@ -26,9 +35,16 @@ class CompanyExcellenceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoredCompanyExcellence $request): RedirectResponse
     {
-        //
+        try {
+            $this->companyExcellenceService->createCompanyExcellence($request->validated());
+            return redirect()->back();
+        } catch (ValidationException $th) {
+            return redirect()->back()
+                ->withErrors($th->validator)
+                ->withInput();
+        }
     }
 
     /**
@@ -44,7 +60,6 @@ class CompanyExcellenceController extends Controller
      */
     public function edit(CompanyExcellence $companyExcellence)
     {
-        //
     }
 
     /**
