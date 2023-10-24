@@ -64,14 +64,17 @@
                             <thead class="align-bottom">
                                 <tr>
                                     <th
-                                        class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Judul Keunggulan Perusahaan</th>
                                     <th
-                                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Deskripsi Keunggulan Perusahaan</th>
                                     <th
                                         class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Gambar Keunggulan Perusahaan</th>
+                                    <th
+                                        class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,19 +82,24 @@
                                     <tr>
                                         <td
                                             class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                            <p class="mb-0 ml-4 leading-tight text-xs text-slate-400">
+                                            <p class="mb-0 ml-4 leading-tight text-center text-xs text-slate-400">
                                                 {{ $item->title }}
                                             </p>
                                         </td>
                                         <td
                                             class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                            <p class="mb-0 leading-tight text-xs text-slate-400">{{ $item->description }}
+                                            <p class="mb-0 leading-tight text-xs text-center text-slate-400">
+                                                {{ $item->description }}
                                             </p>
                                         </td>
                                         <td
                                             class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                                             <img class="inline-flex items-center justify-center w-20 h-20 mr-2 text-white transition-all duration-200 ease-in-out text-sm rounded-xl"
                                                 src="{{ $item->image_url }}" alt="default img">
+                                        </td>
+                                        <td class="p-8 gap-4 flex justify-center">
+                                            <x-button-update />
+                                            <x-button-delete />
                                         </td>
                                     </tr>
                                 @endforeach

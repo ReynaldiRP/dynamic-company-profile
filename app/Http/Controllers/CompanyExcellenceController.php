@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoredCompanyExcellence;
+use App\Http\Requests\CompanyExcellence\StoredCompanyExcellence as StoredCompanyExcellence;
 use App\Models\CompanyExcellence;
 use App\Services\CompanyExcellenceService;
 use Illuminate\Http\RedirectResponse;
