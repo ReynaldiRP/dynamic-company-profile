@@ -7,6 +7,7 @@ use App\Models\CompanyExcellence;
 use App\Services\CompanyExcellenceService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -75,8 +76,15 @@ class CompanyExcellenceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompanyExcellence $companyExcellence)
+    public function destroy(CompanyExcellence $companyExcellence): RedirectResponse
     {
-        //
+        $imagePath = public_path($companyExcellence->image_url);
+        $companyExcellence->delete();
+        if ($imagePath) {
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+        return redirect()->back()->with('toast_success', 'Berhasil menghapus data');
     }
 }

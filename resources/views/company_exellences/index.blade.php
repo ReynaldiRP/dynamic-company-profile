@@ -99,7 +99,12 @@
                                         </td>
                                         <td class="p-8 gap-4 flex justify-center">
                                             <x-button-update />
-                                            <x-button-delete />
+                                            <form action="{{ route('company_excellences.destroy', $item->id) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <x-button-delete />
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -117,6 +122,26 @@
             setTimeout(() => {
                 $('.error-alert').hide(1000);
             }, 1000);
+
+
+            $('[data-selector="button-delete"]').click(function(e) {
+                var form = $(this).closest("form")
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Menghapus data Keunggulan Perusahaan',
+                    text: "apakah anda yakin untuk menghapus data ?",
+                    cancelButtonText: "tidak",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Iya'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                })
+            });
         });
     </script>
 @endpush
