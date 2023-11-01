@@ -5,7 +5,7 @@
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">
             <div class="w-full flex justify-center p-3 bg-white shadow-soft-lg rounded-lg font-poppins ">
-                <h3>Keunggulan Perusahaan</h3>
+                <h3>Tambah Keunggulan Perusahaan</h3>
             </div>
             {{-- Form Company Profile --}}
             <section class="h-full flex flex-col  bg-white shadow-soft-lg rounded-lg font-poppins">
@@ -98,7 +98,7 @@
                                                 src="{{ $item->image_url }}" alt="default img">
                                         </td>
                                         <td class="p-8 gap-4 flex justify-center">
-                                            <x-button-update />
+                                            <x-button-edit href="{{ route('company_excellences.edit', $item->id) }}" />
                                             <form action="{{ route('company_excellences.destroy', $item->id) }}"
                                                 method="post">
                                                 @csrf

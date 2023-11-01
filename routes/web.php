@@ -29,3 +29,7 @@ Route::resource('company_faqs', CompanyFaqController::class);
 Route::resource('company_histories', CompanyHistoryController::class);
 Route::resource('company_projects', CompanyProjectController::class);
 Route::resource('company_teams', CompanyTeamController::class);
+
+
+
+Route::get('CompanyExcellence', [CompanyExcellenceController::class, 'index'])->name('Keunggulan Perusahaan');
