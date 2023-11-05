@@ -73,8 +73,7 @@ class CompanyExcellenceController extends Controller
     {
         try {
             $data = $request->validated();
-            $companyExcellence =
-                $this->companyExcellenceService->updateCompanyExcellence($data);
+            $this->companyExcellenceService->updateCompanyExcellence($data);
             return redirect()->route('Keunggulan Perusahaan')->with('toast_success', 'Berhasil mengubah data');
         } catch (ValidationException $th) {
             return redirect()->back()

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\CompanyRequest;
+namespace App\Http\Requests\CompanyFaq;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoredCompanyRequest extends FormRequest
+class UpdateCompanyFaq extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,6 +22,7 @@ class StoredCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => 'required',
             'faq-question' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
             'faq-answer' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
         ];

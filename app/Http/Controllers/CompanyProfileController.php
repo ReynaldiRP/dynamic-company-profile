@@ -73,8 +73,7 @@ class CompanyProfileController extends Controller
     {
         try {
             $data = $request->validated();
-            $companyProfile =
-                $this->companyProfileService->updateCompanyProfile($data);
+            $this->companyProfileService->updateCompanyProfile($data);
             return redirect()->route('Profil Perusahaan')->with('toast_success', 'Berhasil mengubah data');
         } catch (ValidationException $th) {
             return redirect()->back()

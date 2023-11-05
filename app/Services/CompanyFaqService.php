@@ -16,13 +16,14 @@ class CompanyFaqService
         return $companyFaq;
     }
 
-    public function updateCompanyFaq(array $companyFaqData): CompanyFaq
+    public function updateCompanyFaq(array $companyFaqData)
     {
         $companyFaq = CompanyFaq::find($companyFaqData['id']);
         $updateData = [
             'question' => $companyFaqData['faq-question'],
             'answer' => $companyFaqData['faq-answer']
         ];
+
         return $companyFaq->update($updateData);
     }
 }

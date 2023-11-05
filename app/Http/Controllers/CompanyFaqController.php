@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyFaq;
-use App\Services\CompanyFaqService;
 use Illuminate\Http\Request;
+use App\Services\CompanyFaqService;
+use Illuminate\Validation\ValidationException;
+use App\Http\Requests\CompanyFaq\StoredCompanyFaq;
+use App\Http\Requests\CompanyFaq\UpdateCompanyFaq;
+use Illuminate\Http\RedirectResponse;
 
 class CompanyFaqController extends Controller
 {
@@ -32,9 +36,17 @@ class CompanyFaqController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoredCompanyFaq $request): RedirectResponse
     {
-        //
+        try {
+            $data = $request->validated();
+            $this->companyFaq->createCompanyFaq($data);
+            return redirect()->back()->with('toast_success', 'Berhasil menambahkan data');
+        } catch (ValidationException $th) {
+            return redirect()->back()
+                ->withErrors($th->validator)
+                ->withInput();
+        }
     }
 
     /**
@@ -50,22 +62,31 @@ class CompanyFaqController extends Controller
      */
     public function edit(CompanyFaq $companyFaq)
     {
-        //
+        return view('company_faqs.edit', compact('companyFaq'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompanyFaq $companyFaq)
+    public function update(UpdateCompanyFaq $request)
     {
-        //
+        try {
+            $data = $request->validated();
+            $this->companyFaq->updateCompanyFaq($data);
+            return redirect()->route('Pertanyaan Perusahaan')->with('toast_success', 'Berhasil mengubah data');
+        } catch (ValidationException $th) {
+            return redirect()->back()
+                ->withErrors($th->validator)
+                ->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompanyFaq $companyFaq)
+    public function destroy(CompanyFaq $companyFaq): RedirectResponse
     {
-        //
+        $companyFaq->delete();
+        return redirect()->back()->with('toast_success', 'berhasil menghapus data');
     }
 }
