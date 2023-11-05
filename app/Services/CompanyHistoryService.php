@@ -28,8 +28,8 @@ class CompanyHistoryService
             'description' => $companyHistoryData['histories-description'],
         ];
 
-        if (isset($companyProfileData['histories-img']) && $companyProfileData['histories-img']->isValid()) {
-            $newImageUrl = $this->uploadImage($companyProfileData['histories-img'], $this->imgPath);
+        if (isset($companyHistoryData['histories-img']) && $companyHistoryData['histories-img']->isValid()) {
+            $newImageUrl = $this->uploadImage($companyHistoryData['histories-img'], $this->imgPath);
             $updateData['image_url'] = $newImageUrl;
 
             if ($existingImageUrl) {

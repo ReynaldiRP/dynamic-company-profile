@@ -23,7 +23,7 @@
                         @enderror
                     </div>
                     <div class="flex flex-col p-4 gap-1" id="input-histories-img">
-                        <label for="histories-img" class="text-base text-slate-600 font-semibold">Gambar Keunggulan
+                        <label for="histories-img" class="text-base text-slate-600 font-semibold">Gambar Sejarah
                             Perusahaan</label>
                         <div class="grid grid-cols-2 gap-4">
                             <input type="file" id="histories-img" name="histories-img"
