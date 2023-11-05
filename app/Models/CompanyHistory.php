@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class CompanyHistory extends Model
 {
-    use HasFactory;
+    protected $table = 'company_histories';
+    protected $fillable = [
+        'description', 'image_url'
+    ];
 }

@@ -3,17 +3,20 @@
 namespace App\Services;
 
 use App\Models\CompanyHistory;
+use App\Traits\HasImage;
 
 class CompanyHistoryService
 {
-    public function createCompanyHistory(array $companyHistory): CompanyHistory
+    use HasImage;
+    private $imgPath = 'company_history';
+    public function createCompanyHistory(array $companyHistoryData): CompanyHistory
     {
-        $companyHistoryData = CompanyHistory::create([
-            'description' => $companyHistory['description'],
-            'image_url' => $companyHistory['image_url'],
+        $companyHistory = CompanyHistory::create([
+            'description' => $companyHistoryData['histories-description'],
+            'image_url' => $this->uploadImage($companyHistoryData['histories-img'], $this->imgPath),
         ]);
 
-        return $companyHistoryData;
+        return $companyHistory;
     }
 
     public function updatecompanyHistory(array $companyHistoryData)
@@ -22,11 +25,11 @@ class CompanyHistoryService
         $existingImageUrl = $companyHistory->image_url;
 
         $updateData = [
-            'description' => $companyHistoryData['description'],
+            'description' => $companyHistoryData['histories-description'],
         ];
 
-        if (isset($companyProfileData['history_image']) && $companyProfileData['history_image']->isValid()) {
-            $newImageUrl = $this->uploadImage($companyProfileData['history_image'], $this->imgPath);
+        if (isset($companyProfileData['histories-img']) && $companyProfileData['histories-img']->isValid()) {
+            $newImageUrl = $this->uploadImage($companyProfileData['histories-img'], $this->imgPath);
             $updateData['image_url'] = $newImageUrl;
 
             if ($existingImageUrl) {
