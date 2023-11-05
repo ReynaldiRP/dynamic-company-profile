@@ -22,9 +22,9 @@ class StoredCompanyExcellence extends FormRequest
     public function rules(): array
     {
         return [
-            'excellence-title' => 'required|regex:/^[\p{L}\s-]+$/u|max:255',
+            'excellence-title' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
             'excellence-description' => 'required|max:500',
-            'excellence-img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'excellence-img' => 'required|image|mimes:jpeg,png,jpg,gif'
         ];
     }
 }

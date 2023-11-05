@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyFaq;
+use App\Services\CompanyFaqService;
 use Illuminate\Http\Request;
 
 class CompanyFaqController extends Controller
 {
+
+    public function __construct(private CompanyFaqService $companyFaq)
+    {
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('company_faqs.index');
+        $companyFaq = CompanyFaq::all();
+        return view('company_faqs.index', compact('companyFaq'));
     }
 
     /**

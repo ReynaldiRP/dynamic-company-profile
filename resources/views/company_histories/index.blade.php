@@ -1,6 +1,4 @@
 @extends('layouts.dashboard.app')
-@include('layouts.navbars.sidebar')
-@include('layouts.navbars.nav')
 @section('cards')
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">

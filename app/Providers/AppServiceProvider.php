@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Str::macro('limitWords', function ($value, $words = 10, $end = '...') {
+            $wordsArray = Str::words($value, $words, $end);
+            return $wordsArray;
+        });
     }
 }

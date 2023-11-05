@@ -7,8 +7,6 @@ use App\Http\Requests\CompanyExcellence\UpdateCompanyExcellence;
 use App\Models\CompanyExcellence;
 use App\Services\CompanyExcellenceService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use RealRashid\SweetAlert\Facades\Alert;
 

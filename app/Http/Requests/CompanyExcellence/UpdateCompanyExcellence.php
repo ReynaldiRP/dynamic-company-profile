@@ -23,9 +23,9 @@ class UpdateCompanyExcellence extends FormRequest
     {
         return [
             'id' => 'required',
-            'excellence-title' => 'required|regex:/^[\p{L}\s-]+$/u|max:255',
+            'excellence-title' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
             'excellence-description' => 'required|max:500',
-            'excellence-img' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'excellence-img' => 'sometimes|image|mimes:jpeg,png,jpg,gif'
         ];
     }
 }

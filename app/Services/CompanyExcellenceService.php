@@ -3,37 +3,23 @@
 namespace App\Services;
 
 use App\Models\CompanyExcellence;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
+use App\Traits\HasImage;
 
 class CompanyExcellenceService
 {
-
-    public function uploadImage(UploadedFile $image): string
-    {
-        $imageName = time() . '.' . $image->extension();
-        $storeImage = $image->storeAs('images/company_excellences', $imageName, 'public');
-        $imagePath = Storage::url($storeImage);
-
-        return $imagePath;
-    }
-
-    public function checkFileExist($filePath)
-    {
-        return file_exists($filePath);
-    }
+    use HasImage;
+    private $imgPath = 'company_excellences';
 
     public function createCompanyExcellence(array $companyExcellenceData): CompanyExcellence
     {
         $companyExcellence = CompanyExcellence::create([
             'title' => $companyExcellenceData['excellence-title'],
             'description' => $companyExcellenceData['excellence-description'],
-            'image_url' => $this->uploadImage($companyExcellenceData['excellence-img'])
+            'image_url' => $this->uploadImage($companyExcellenceData['excellence-img'], $this->imgPath)
         ]);
 
         return $companyExcellence;
     }
-
     public function updateCompanyExcellence(array $companyExcellenceData)
     {
         $companyExcellence = CompanyExcellence::find($companyExcellenceData['id']);
@@ -45,7 +31,7 @@ class CompanyExcellenceService
         ];
 
         if (isset($companyExcellenceData['excellence-img']) && $companyExcellenceData['excellence-img']->isValid()) {
-            $newImageUrl = $this->uploadImage($companyExcellenceData['excellence-img']);
+            $newImageUrl = $this->uploadImage($companyExcellenceData['excellence-img'], $this->imgPath);
             $updateData['image_url'] = $newImageUrl;
 
             if ($existingImageUrl) {
