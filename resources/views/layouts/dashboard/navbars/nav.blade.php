@@ -33,7 +33,7 @@
                         <a href="../pages/sign-in.html"
                             class="block px-0 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500">
                             <i class="fa fa-user sm:mr-1"></i>
-                            <span class="hidden sm:inline">Sign In</span>
+                            <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
                         </a>
                     </li>
                     <li class="flex items-center pl-4 xl:hidden">
@@ -49,14 +49,14 @@
                         </a>
                     </li>
                     <li class="flex items-center px-4">
-                        <a href="javascript:;" class="p-0 transition-all text-sm ease-nav-brand text-slate-500">
-                            <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
-                        </a>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit"
+                                class="inline-block px-6 py-3 mr-3 font-bold text-center uppercase align-middle transition-all rounded-lg cursor-pointer bg-red-500/0 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-red-500/25 hover:scale-102 active:bg-red/45 text-red-500">Sign
+                                Out</button>
+                        </form>
                     </li>
-
-                    <!-- notifications -->
-
-                    <li class="relative flex items-center pr-2">
+                    {{-- <li class="relative flex items-center pr-2">
                         <p class="hidden transform-dropdown-show"></p>
                         <a href="javascript:;" class="block p-0 transition-all text-sm ease-nav-brand text-slate-500"
                             dropdown-trigger aria-expanded="false">
@@ -150,7 +150,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
