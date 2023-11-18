@@ -33,6 +33,7 @@
                     </svg>
                 </x-sidebar-menu-item>
 
+
                 <x-sidebar-menu-item route="Pertanyaan Perusahaan" label="FAQ Perusahaan"
                     currentRoute="{{ request()->route()->getName() }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 512 512">
@@ -41,6 +42,7 @@
                     </svg>
                 </x-sidebar-menu-item>
 
+                
                 <x-sidebar-menu-item route="Sejarah Perusahaan" label="Sejarah Perusahaan"
                     currentRoute="{{ request()->route()->getName() }}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em"

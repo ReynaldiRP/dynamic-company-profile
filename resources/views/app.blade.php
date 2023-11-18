@@ -10,7 +10,14 @@
 </head>
 
 <body>
-    @include('layouts.landing_page.navbar.nav')
+    <div>
+        @include('layouts.landing_page.includes.nav')
+    </div>
+
+    <header class="masthead">
+        @include('layouts.landing_page.includes.masthead')
+    </header>
+
     @include('layouts.landing_page.assets.script')
 </body>
 

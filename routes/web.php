@@ -8,6 +8,7 @@ use App\Http\Controllers\CompanyHistoryController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\CompanyProjectController;
 use App\Http\Controllers\CompanyExcellenceController;
+use App\Http\Controllers\FrontEnd;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ use App\Http\Controllers\CompanyExcellenceController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.login');
 });
 
 Route::get('/dashboard', function () {
