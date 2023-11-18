@@ -3,8 +3,13 @@
                 @foreach ($companyProfile as $item)
                     <a class="" href="#page-top"><img src="{{ asset($item->website_logo_url) }}" alt="..." /></a>
                 @endforeach
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="text-uppercase"
+                    style="font-size: 1.5rem;margin-left: 1rem;font-family: Poppins;color: #A68B2F;">
+                    pt. maju jaya sentosa
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
