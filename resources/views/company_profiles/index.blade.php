@@ -143,7 +143,7 @@
                                         <td
                                             class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                                             <img class="inline-flex items-center justify-center w-20 h-20 mr-2 text-white transition-all duration-200 ease-in-out text-sm rounded-xl"
-                                                src="{{ $item->website_logo_url }}" alt="default img">
+                                                src="{{ $item->website_logo }}" alt="default img">
                                         </td>
                                         <td class="p-8 gap-4 flex justify-center">
                                             <x-button-edit href="{{ route('company_profiles.edit', $item->id) }}" />

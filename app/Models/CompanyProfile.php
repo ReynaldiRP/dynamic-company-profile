@@ -9,6 +9,6 @@ class CompanyProfile extends Model
     protected $table = 'company_profiles';
     protected $fillable = [
         'name', 'description',
-        'address', 'phone', 'email', 'website_logo_url'
+        'address', 'phone', 'email', 'website_logo'
     ];
 }

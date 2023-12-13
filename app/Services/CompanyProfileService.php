@@ -18,8 +18,9 @@ class CompanyProfileService
             'address' => $companyProfileData['address'],
             'phone' => $companyProfileData['phone'],
             'email' => $companyProfileData['email'],
-            'website_logo_url' => $this->uploadImage($companyProfileData['logo_url'], $this->imgPath)
+            'website_logo' => $this->uploadImage($companyProfileData['logo_url'], $this->imgPath)
         ]);
+
 
 
         return $companyProfile;
@@ -45,7 +46,7 @@ class CompanyProfileService
                 unlink(public_path($existingImageUrl));
             }
         }
-        
+
         return $companyProfile->update($updateData);
     }
 }

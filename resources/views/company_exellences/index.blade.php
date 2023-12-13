@@ -5,7 +5,7 @@
 @section('cards')
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">
-            <div class="w-full flex justify-center p-3 bg-white shadow-soft-lg rounded-lg font-poppins ">
+            <div class="w-full flex justify-center p-3 bg-white shadow-soft-lg rounded-lg font-poppins {{ asset('') }}">
                 <h3>Tambah Keunggulan Perusahaan</h3>
             </div>
             {{-- Form Company Profile --}}

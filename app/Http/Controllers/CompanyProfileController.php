@@ -40,6 +40,7 @@ class CompanyProfileController extends Controller
     public function store(StoredCompanyProfile $request): RedirectResponse
     {
         try {
+            // dd($request->all());
             $data = $request->validated();
             $this->companyProfileService->createCompanyProfile($data);
             return redirect()->back()->with('toast_success', 'Berhasil menambahkan data');

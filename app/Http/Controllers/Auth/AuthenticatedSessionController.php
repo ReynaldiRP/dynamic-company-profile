@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -25,11 +26,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        // dd($request->all());
+
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->route('Profil Perusahaan');
+        if (auth()->check() && auth()->user()->role_id == 1) {
+            return redirect()->route('homepage.index');
+        } else {
+            return redirect()->route('Profil Perusahaan');
+        }
     }
 
     /**

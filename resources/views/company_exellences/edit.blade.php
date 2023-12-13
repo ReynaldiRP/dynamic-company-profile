@@ -65,16 +65,14 @@
 @push('scripts')
     <script>
         $(document).ready(function(e) {
-            $('#excellence-img').change(function(e) {
+            $('#profilePicture').change(function(e) {
                 var file = e.target.files[0];
                 if (file) {
                     var reader = new FileReader();
                     reader.onload = function(e) {
-                        $('#img-preview').attr('src', e.target.result);
+                        $('#previewProfilePicture').attr('src', e.target.result);
                     }
                     reader.readAsDataURL(file);
-                } else {
-                    $('#image-preview').attr('src', '{{ $companyExcellence->image_url }}');
                 }
             });
         });
