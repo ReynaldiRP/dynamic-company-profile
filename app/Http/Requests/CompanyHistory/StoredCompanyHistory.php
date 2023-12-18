@@ -22,6 +22,8 @@ class StoredCompanyHistory extends FormRequest
     public function rules(): array
     {
         return [
+            'histories-title' => 'required',
+            'histories-year' => 'required',
             'histories-description' => 'required|max:500',
             'histories-img' => 'required|image|mimes:jpeg,png,jpg,gif',
         ];

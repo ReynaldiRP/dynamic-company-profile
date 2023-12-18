@@ -12,6 +12,8 @@ class CompanyHistoryService
     public function createCompanyHistory(array $companyHistoryData): CompanyHistory
     {
         $companyHistory = CompanyHistory::create([
+            'title' => $companyHistoryData['histories-title'],
+            'year' => $companyHistoryData['histories-year'],
             'description' => $companyHistoryData['histories-description'],
             'image_url' => $this->uploadImage($companyHistoryData['histories-img'], $this->imgPath),
         ]);
@@ -25,6 +27,8 @@ class CompanyHistoryService
         $existingImageUrl = $companyHistory->image_url;
 
         $updateData = [
+            'title' => $companyHistoryData['histories-title'],
+            'year' => $companyHistoryData['histories-year'],
             'description' => $companyHistoryData['histories-description'],
         ];
 

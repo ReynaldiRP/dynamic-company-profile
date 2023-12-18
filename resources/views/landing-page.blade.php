@@ -18,6 +18,12 @@
         @include('layouts.landing_page.includes.masthead')
     </header>
 
+    <section class="page-section" id="about">
+        @include('layouts.landing_page.includes.company_history')
+    </section>
+
+
+    @include('layouts.landing_page.includes.modal_form_question')
     @include('layouts.landing_page.assets.script')
 </body>
 

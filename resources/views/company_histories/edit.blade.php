@@ -11,6 +11,30 @@
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id" id="id" value="{{ $companyHistory->id }}">
+                    <div class="flex flex-col p-4 gap-1" id="input-histories-title">
+                        <label for="histories-title" class="text-base text-slate-600 font-semibold">Judul Timeline Sejarah
+                            Perusahaan</label>
+                        <input type="text" id="histories-title" name="histories-title"
+                            placeholder="Timeline Sejarah Perusahaan" value="{{ $companyHistory->title }}"
+                            class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                        @error('histories-title')
+                            <div class="error-alert relative w-full mt-3 p-4 text-white bg-red-500 rounded-lg">
+                                {{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col p-4 gap-1" id="input-histories-year">
+                        <label for="histories-year" class="text-base text-slate-600 font-semibold">Timeline Sejarah
+                            Perusahaan</label>
+                        <input type="date" id="histories-year" name="histories-year"
+                            placeholder="Timeline Sejarah
+                            Perusahaan"
+                            value="{{ $companyHistory->year }}"
+                            class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none">
+                        @error('histories-year')
+                            <div class="error-alert relative w-full mt-3 p-4 text-white bg-red-500 rounded-lg">
+                                {{ $message }}</div>
+                        @enderror
+                    </div>
                     <div class="flex flex-col p-4 gap-1" id="input-histories-description">
                         <label for="histories-description" class="text-base text-slate-600 font-semibold">Deksripsi Sejarah
                             Perusahaan</label>

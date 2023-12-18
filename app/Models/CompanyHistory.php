@@ -8,6 +8,6 @@ class CompanyHistory extends Model
 {
     protected $table = 'company_histories';
     protected $fillable = [
-        'description', 'image_url'
+        'year', 'title', 'description', 'image_url'
     ];
 }

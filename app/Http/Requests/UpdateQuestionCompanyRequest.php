@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests\CompanyHistory;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCompanyHistory extends FormRequest
+class UpdateQuestionCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,11 +22,7 @@ class UpdateCompanyHistory extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required',
-            'histories-title' => 'required',
-            'histories-year' => 'required',
-            'histories-description' => 'required|max:500',
-            'histories-img' => 'sometimes|image|mimes:jpeg,png,jpg,gif',
+            //
         ];
     }
 }

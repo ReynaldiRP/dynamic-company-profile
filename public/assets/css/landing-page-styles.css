@@ -4107,6 +4107,7 @@ fieldset:disabled .btn {
     .navbar-expand-lg .navbar-nav {
         flex-direction: row;
     }
+
     .navbar-expand-lg .navbar-nav .dropdown-menu {
         position: absolute;
     }
@@ -5424,7 +5425,7 @@ fieldset:disabled .btn {
 }
 
 .modal {
-    --bs-modal-zindex: 1055;
+    --bs-modal-zindex: 1600;
     --bs-modal-width: 500px;
     --bs-modal-padding: 1rem;
     --bs-modal-margin: 0.5rem;
@@ -5511,7 +5512,7 @@ fieldset:disabled .btn {
 }
 
 .modal-backdrop {
-    --bs-backdrop-zindex: 1050;
+    --bs-backdrop-zindex: 1000;
     --bs-backdrop-bg: #000;
     --bs-backdrop-opacity: 0.5;
     position: fixed;
@@ -5551,6 +5552,7 @@ fieldset:disabled .btn {
 .modal-title {
     margin-bottom: 0;
     line-height: var(--bs-modal-title-line-height);
+    color: black;
 }
 
 .modal-body {
