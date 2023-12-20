@@ -1,6 +1,3 @@
-{{-- @php
-    dd(request()->is(''));
-@endphp --}}
 @extends('layouts.dashboard.app')
 @section('cards')
     <div class="w-full h-full p-6 mx-auto rounded-2xl">

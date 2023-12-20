@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\CompanyProject;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoredCompanyProject extends FormRequest
+class CompanyServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,10 @@ class StoredCompanyProject extends FormRequest
     public function rules(): array
     {
         return [
-            'project-client' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
-            'project-name' => 'required',
-            'project-description' => 'required',
-            'project-img' => 'required|image|mimes:jpeg,png,jpg,gif'
+            'id' => 'sometimes',
+            'service-title' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
+            'service-description' => 'required|max:500',
+            'service-img' => 'required|image|mimes:jpeg,png,jpg,gif'
         ];
     }
 }

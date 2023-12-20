@@ -13,7 +13,9 @@ class CompanyProjectService
     {
         $companyProject = CompanyProject::create([
             'client_name' => $companyProjectData['project-client'],
-            'client_image_url' => $this->uploadImage($companyProjectData['project-img'], $this->imgPath),
+            'project_name' => $companyProjectData['project-name'],
+            'image_url' => $this->uploadImage($companyProjectData['project-img'], $this->imgPath),
+            'description' => $companyProjectData['project-description'],
         ]);
 
         return $companyProject;
@@ -26,6 +28,8 @@ class CompanyProjectService
 
         $updateData = [
             'client_name' => $companyProjectData['project-client'],
+            'project_name' => $companyProjectData['project-name'],
+            'description' => $companyProjectData['project-description'],
         ];
 
         if (isset($companyProjectData['project-img']) && $companyProjectData['project-img']->isValid()) {

@@ -2,10 +2,11 @@
         <div class="container">
             @foreach ($companyProfile as $item)
                 <a class="" href="#page-top"><img src="{{ asset($item->website_logo) }}" alt="..." /></a>
+                <span class="text-uppercase"
+                    style="font-size: 1rem;margin-left: 1rem;font-family: Poppins;color: #A68B2F;font-weight: bold">
+                    {{ $item->name }}
+                </span>
             @endforeach
-            <span class="text-uppercase" style="font-size: 1.5rem;margin-left: 1rem;font-family: Poppins;color: #A68B2F;">
-                pt. maju jaya sentosa
-            </span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -13,9 +14,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#excellence">Keunggulan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#service">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     @auth
@@ -36,16 +38,12 @@
                             </ul>
                         @endauth
                         @guest
-                            <div class="nav-item row g-2">
-                                <div class="col">
-                                    <li class="nav-item"><a class="btn btn-primary text-black fw-bold"
-                                            href="{{ route('login') }}">Login</a></li>
-                                </div>
-                                <div class="col">
-                                    <li class="nav-item"><a class="btn btn-secondary text-white fw-bold"
-                                            href="{{ route('register') }}">Register</a>
-                                    </li>
-                                </div>
+                            <div class="nav-item d-flex gap-1">
+                                <li class="nav-item"><a class="btn btn-primary text-black fw-bold"
+                                        href="{{ route('login') }}">Login</a></li>
+                                <li class="nav-item"><a class="btn btn-secondary text-white fw-bold"
+                                        href="{{ route('register') }}">Register</a>
+                                </li>
                             </div>
                         @endguest
                     </div>

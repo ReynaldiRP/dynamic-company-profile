@@ -6233,6 +6233,7 @@ fieldset:disabled .btn {
     padding-bottom: 1.25rem;
     color: #fff;
     text-align: center;
+    z-index: 100;
 }
 
 .carousel-dark .carousel-control-prev-icon,
@@ -11759,4 +11760,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 .profile-picture-image:focus {
     outline: none;
     border: 1px black solid;
+}
+
+.service-img {
+    width: 125px;
+    height: auto;
 }

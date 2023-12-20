@@ -24,7 +24,9 @@ class UpdateCompanyProject extends FormRequest
         return [
             'id' => 'required',
             'project-client' => 'required|regex:/^[\p{L}\s\-.,?!]+$/u|max:255',
-            'project-img' => 'sometimes|image|mimes:jpeg,png,jpg,gif'
+            'project-name' => 'required',
+            'project-description' => 'required',
+            'project-img' => 'required|image|mimes:jpeg,png,jpg,gif'
         ];
     }
 }

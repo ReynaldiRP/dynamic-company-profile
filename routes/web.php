@@ -8,6 +8,7 @@ use App\Http\Controllers\CompanyHistoryController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\CompanyProjectController;
 use App\Http\Controllers\CompanyExcellenceController;
+use App\Http\Controllers\CompanyServiceController;
 use App\Http\Controllers\FrontEnd;
 
 /*
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('company_profiles', CompanyProfileController::class);
     Route::resource('company_excellences', CompanyExcellenceController::class);
+    Route::resource('company_service', CompanyServiceController::class);
     Route::resource('company_faqs', CompanyFaqController::class);
     Route::resource('company_histories', CompanyHistoryController::class);
     Route::resource('company_projects', CompanyProjectController::class);
@@ -46,6 +48,7 @@ Route::middleware('auth')->group(function () {
     // Route Sidebar
     Route::get('CompanyProfile', [CompanyProfileController::class, 'index'])->name('Profil Perusahaan');
     Route::get('CompanyExcellence', [CompanyExcellenceController::class, 'index'])->name('Keunggulan Perusahaan');
+    Route::get('CompanyService', [CompanyServiceController::class, 'index'])->name('Service Perusahaan');
     Route::get('CompanyFaq', [CompanyFaqController::class, 'index'])->name('Pertanyaan Perusahaan');
     Route::get('CompanyHistory', [CompanyHistoryController::class, 'index'])->name('Sejarah Perusahaan');
     Route::get('CompanyProject', [CompanyProjectController::class, 'index'])->name('Proyek Perusahaan');

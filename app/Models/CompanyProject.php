@@ -8,6 +8,6 @@ class CompanyProject extends Model
 {
     protected $table = 'company_projects';
     protected $fillable = [
-        'client_name', 'client_image_url'
+        'client_name', 'project_name', 'image_url', 'description'
     ];
 }

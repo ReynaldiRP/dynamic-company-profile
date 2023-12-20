@@ -22,8 +22,25 @@
         @include('layouts.landing_page.includes.company_history')
     </section>
 
+    <section class="page-section bg-light " id="excellence">
+        @include('layouts.landing_page.includes.company_excellences')
+    </section>
+
+    <section class="page-section" id="service">
+        @include('layouts.landing_page.includes.company_services')
+    </section>
+
+    <section class="page-section bg-light " id="portfolio">
+        @include('layouts.landing_page.includes.company_portofolio')
+    </section>
+
+
+    <footer class="footer py-4">
+        @include('layouts.landing_page.includes.footer')
+    </footer>
 
     @include('layouts.landing_page.includes.modal_form_question')
+    @include('layouts.landing_page.includes.modal_detail_portofolio')
     @include('layouts.landing_page.assets.script')
 </body>
 
