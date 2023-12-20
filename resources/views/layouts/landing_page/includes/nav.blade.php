@@ -18,8 +18,8 @@
                     <li class="nav-item"><a class="nav-link" href="#excellence">Keunggulan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#service">Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     @auth
                         <div class="dropdown profile-picture-container">
                             <img src="{{ asset('assets/img/bruce-mars.jpg') }}" alt="profile_picture"

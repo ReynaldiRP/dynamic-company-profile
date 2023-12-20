@@ -34,14 +34,24 @@
         @include('layouts.landing_page.includes.company_portofolio')
     </section>
 
+    <section class="page-section" id="faq">
+        @include('layouts.landing_page.includes.company_faq')
+    </section>
+
+    <section class="page-section bg-light " id="team">
+        @include('layouts.landing_page.includes.company_team')
+    </section>
+
 
     <footer class="footer py-4">
         @include('layouts.landing_page.includes.footer')
     </footer>
 
+    @include('layouts.landing_page.assets.script')
+
+
     @include('layouts.landing_page.includes.modal_form_question')
     @include('layouts.landing_page.includes.modal_detail_portofolio')
-    @include('layouts.landing_page.assets.script')
 </body>
 
 </html>

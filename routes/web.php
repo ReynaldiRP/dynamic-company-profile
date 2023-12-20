@@ -22,9 +22,13 @@ use App\Http\Controllers\FrontEnd;
 |
 */
 
-// Route::get('/', function () {
-//     return view('Auth.login');
-// });
+Route::get('/login', function () {
+    return view('Auth.login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('Auth.register');
+})->name('register');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -59,5 +63,8 @@ Route::middleware('auth')->group(function () {
 
 // Route Front End
 Route::get('/', [FrontEnd::class, 'index'])->name('homepage.index');
+
+//Detail Portofolio
+Route::get('/{companyProject}', [FrontEnd::class, 'showDetailProject']);
 
 require __DIR__ . '/auth.php';
