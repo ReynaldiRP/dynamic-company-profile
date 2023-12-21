@@ -41,7 +41,7 @@ class CompanyFaqController extends Controller
         try {
             $data = $request->validated();
             $this->companyFaq->createCompanyFaq($data);
-            return redirect()->back()->with('toast_success', 'Berhasil menambahkan data');
+            return redirect()->back()->with('success', 'Berhasil menambahkan data');
         } catch (ValidationException $th) {
             return redirect()->back()
                 ->withErrors($th->validator)

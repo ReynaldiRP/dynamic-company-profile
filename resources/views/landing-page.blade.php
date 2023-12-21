@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
+
     <div>
         @include('layouts.landing_page.includes.nav')
     </div>

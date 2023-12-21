@@ -10,6 +10,7 @@ use App\Http\Controllers\CompanyProjectController;
 use App\Http\Controllers\CompanyExcellenceController;
 use App\Http\Controllers\CompanyServiceController;
 use App\Http\Controllers\FrontEnd;
+use App\Http\Controllers\QuestionCompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('company_histories', CompanyHistoryController::class);
     Route::resource('company_projects', CompanyProjectController::class);
     Route::resource('company_teams', CompanyTeamController::class);
+
+    Route::post('question_company', [QuestionCompanyController::class, 'store'])->name('question_company.store');
 
 
     // Route Sidebar
