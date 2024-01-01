@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('company_teams', CompanyTeamController::class);
 
     Route::post('question_company', [QuestionCompanyController::class, 'store'])->name('question_company.store');
+    Route::put('question_company/{questionCompany}', [QuestionCompanyController::class, 'changeStatusQuestion'])->name('question_company.changeStatusQuestion');
 
 
     // Route Sidebar
@@ -60,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::get('CompanyHistory', [CompanyHistoryController::class, 'index'])->name('Sejarah Perusahaan');
     Route::get('CompanyProject', [CompanyProjectController::class, 'index'])->name('Proyek Perusahaan');
     Route::get('CompanyTeam', [CompanyTeamController::class, 'index'])->name('Team Perusahaan');
+    Route::get('CompanyQuestion', [QuestionCompanyController::class, 'index'])->name('Pertanyaan User');
 });
 
 

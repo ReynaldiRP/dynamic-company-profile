@@ -14,6 +14,19 @@ class QuestionCompanyController extends Controller
     public function __construct(private QuestionCompanyService $questionCompany)
     {
     }
+
+
+    public function index()
+    {
+        $questionCompany = QuestionCompany::with('user')->get();
+        return view('company_questions.index', compact('questionCompany'));
+    }
+
+    public function changeStatusQuestion(QuestionCompany $questionCompany)
+    {
+        $this->questionCompany->changeStatusQuestion($questionCompany->id);
+        return redirect()->back()->with('success', 'Berhasil mengubah status pertanyaan user');
+    }
     /**
      * Store a newly created resource in storage.
      */

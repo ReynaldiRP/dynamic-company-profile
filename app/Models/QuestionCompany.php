@@ -11,11 +11,11 @@ class QuestionCompany extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id', 'body', 'phone_number', 'email'
+        'user_id', 'body', 'phone_number', 'email', 'status'
     ];
 
-    public function user(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(user::class);
+        return $this->belongsTo(user::class);
     }
 }

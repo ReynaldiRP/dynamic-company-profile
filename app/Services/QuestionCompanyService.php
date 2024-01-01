@@ -17,4 +17,20 @@ class QuestionCompanyService
 
         return $questionCompany;
     }
+
+    public function changeStatusQuestion($questionCompanyId)
+    {
+        $questionCompany = QuestionCompany::find($questionCompanyId);
+        if ($questionCompany) {
+            $status = $questionCompany->status == 0 ? 1 : 0;
+
+            $questionCompany->update([
+                'status' => $status
+            ]);
+
+            return $questionCompany;
+        }
+
+        return null;
+    }
 }
