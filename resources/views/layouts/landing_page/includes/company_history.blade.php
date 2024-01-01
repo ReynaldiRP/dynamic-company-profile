@@ -14,7 +14,8 @@
                                 </div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
-                                        <h4>{{ $item->year }}</h4>
+                                        <h4>{{ Carbon\Carbon::parse($item->year)->translatedFormat('l, d/F/Y') }}
+                                        </h4>
                                         <h4 class="subheading">{{ $item->title }}</h4>
                                     </div>
                                     <div class="timeline-body">
@@ -28,7 +29,8 @@
                                         src="{{ asset($item->image_url) }}" alt="..." /></div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
-                                        <h4>{{ $item->year }}</h4>
+                                        <h4>{{ Carbon\Carbon::parse($item->year)->translatedFormat('l, d-F-Y') }}
+                                        </h4>
                                         <h4 class="subheading">{{ $item->title }}</h4>
                                     </div>
                                     <div class="timeline-body">

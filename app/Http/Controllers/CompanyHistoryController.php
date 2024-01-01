@@ -11,6 +11,7 @@ use App\Services\CompanyHistoryService;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\CompanyHistory\StoredCompanyHistory;
 use App\Http\Requests\CompanyHistory\UpdateCompanyHistory;
+use Carbon\Carbon;
 
 class CompanyHistoryController extends Controller
 {
@@ -24,7 +25,10 @@ class CompanyHistoryController extends Controller
     public function index(): View
     {
         $companyHistory = CompanyHistory::all();
-        return view('company_histories.index', compact('companyHistory'));
+        $dateFormat = $companyHistory->map(function ($history) {
+            return Carbon::parse($history->year)->translatedFormat('l, d-F-Y');
+        });
+        return view('company_histories.index', compact('companyHistory', 'dateFormat'));
     }
 
     /**

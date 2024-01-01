@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 

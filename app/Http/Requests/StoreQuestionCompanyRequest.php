@@ -25,6 +25,7 @@ class StoreQuestionCompanyRequest extends FormRequest
             'user_id' => 'required',
             'body' => 'required',
             'phone_number' => 'required',
+            'email' => 'required|email'
         ];
     }
 }

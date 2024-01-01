@@ -45,7 +45,7 @@
                                     <h2 class="text-uppercase">${response.data.client_name}</h2>
                                     <p class="item-intro text-muted">${response.data.project_name}</p>
                                     <img class="img-fluid d-block mx-auto" src="${response.data.image_url}" alt="..." />
-                                    <p>${response.data.description}</p>
+                                    <p style="text-align: justify">${response.data.description}</p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
                                         type="button">
                                         <i class="fas fa-xmark me-1"></i>

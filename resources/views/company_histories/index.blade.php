@@ -87,7 +87,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($companyHistory as $item)
+                                @foreach ($companyHistory as $index => $item)
                                     <tr>
                                         <td
                                             class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -98,7 +98,7 @@
                                         <td
                                             class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                             <p class="mb-0 leading-tight text-xs text-slate-400 text-center">
-                                                {{ $item->year }}
+                                                {{ $dateFormat[$index] }}
                                             </p>
                                         </td>
                                         <td

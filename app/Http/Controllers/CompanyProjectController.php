@@ -84,7 +84,7 @@ class CompanyProjectController extends Controller
      */
     public function destroy(CompanyProject $companyProject)
     {
-        $imagePath = public_path($companyProject->client_image_url);
+        $imagePath = public_path($companyProject->image_url);
         $companyProject->delete();
         if ($imagePath) {
             if (file_exists($imagePath)) {

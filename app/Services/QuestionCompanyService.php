@@ -12,6 +12,7 @@ class QuestionCompanyService
             'user_id' => $questionCompanyData['user_id'],
             'body' => $questionCompanyData['body'],
             'phone_number' => $questionCompanyData['phone_number'],
+            'email' => $questionCompanyData['email'],
         ]);
 
         return $questionCompany;

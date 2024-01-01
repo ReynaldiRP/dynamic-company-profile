@@ -11,7 +11,7 @@ class QuestionCompany extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id', 'body', 'phone_number'
+        'user_id', 'body', 'phone_number', 'email'
     ];
 
     public function user(): HasMany
