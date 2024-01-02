@@ -23,7 +23,6 @@ class QuestionCompanyService
         $questionCompany = QuestionCompany::find($questionCompanyId);
         if ($questionCompany) {
             $status = $questionCompany->status == 0 ? 1 : 0;
-
             $questionCompany->update([
                 'status' => $status
             ]);
