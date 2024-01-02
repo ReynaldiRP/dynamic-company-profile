@@ -11217,6 +11217,10 @@ p {
 .page-section {
     padding: 6rem 0;
 }
+
+.page-section-visi-misi {
+    padding: 2rem 2rem;
+}
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
     font-size: 2.5rem;
@@ -11766,4 +11770,16 @@ section#contact form#contactForm :-ms-input-placeholder {
 .service-img {
     width: 125px;
     height: auto;
+}
+
+.visi-misi-title {
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+.visi-misi-paragraph {
+    font-size: 1rem;
+    font-family: 'Poppins';
+    font-weight: medium;
 }

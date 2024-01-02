@@ -22,6 +22,29 @@
         @include('layouts.landing_page.includes.masthead')
     </header>
 
+    <section class="page-section-visi-misi bg-light">
+        <div class="row">
+            <div class="col-6 d-flex align-items-center flex-column gap-2">
+                <span class="visi-misi-title">visi</span>
+                <p class="visi-misi-paragraph" style="text-align: justify">
+                    Menjadi sebuah perusahaan konstruksi yang mengutamakan kualitas terbaik untuk jasa layanan kami,
+                    dengan menjadi mitra yang mengedepankan intergritas serta kepercayaan bersama klien demi
+                    menghasilkan proyek terbaik.
+                </p>
+            </div>
+            <div class="col-6 d-flex align-items-center flex-column gap-2">
+                <span class="visi-misi-title">misi</span>
+                <ul>
+                    <li class="visi-misi-paragraph">Memberikan kontribusi dan nilai terbaik kami agar tercapai
+                        kesuksesan dalam proyek serta agar
+                        dapat menjaga hubungan yang baik dengan mitra ataupun klien kami.</li>
+                    <li class="visi-misi-paragraph">hubungan yang baik dengan mitra ataupun klien kami.
+                        Terus</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section class="page-section" id="about">
         @include('layouts.landing_page.includes.company_history')
     </section>
