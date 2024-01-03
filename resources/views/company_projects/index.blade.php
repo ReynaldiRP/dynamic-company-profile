@@ -143,7 +143,7 @@
                 var form = $(this).closest("form")
                 e.preventDefault();
                 Swal.fire({
-                    title: 'Menghapus data Keunggulan Perusahaan',
+                    title: 'Menghapus data Proyek Perusahaan',
                     text: "apakah anda yakin untuk menghapus data ?",
                     cancelButtonText: "tidak",
                     icon: 'warning',

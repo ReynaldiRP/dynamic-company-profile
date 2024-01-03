@@ -50,6 +50,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('Profil Perusahaan')->with('toast_success', 'Register successfull !');
+        return redirect()->route('homepage.index')->with('toast_success', 'Register successfull !');
     }
 }

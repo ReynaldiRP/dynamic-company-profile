@@ -3,7 +3,7 @@
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">
             <div class="w-full flex justify-center p-3 bg-white shadow-soft-lg rounded-lg font-poppins ">
-                <h3>Team Perusahaan</h3>
+                <h3>Edit Team Perusahaan</h3>
             </div>
             <section class="h-full flex flex-col  bg-white shadow-soft-lg rounded-lg font-poppins">
                 <form action="{{ route('company_teams.update', $companyTeam->id) }}" method="post"
