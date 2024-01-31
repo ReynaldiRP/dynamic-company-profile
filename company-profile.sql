@@ -338,13 +338,13 @@ CREATE TABLE `question_companies` (
   `body` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `question_companies_user_id` (`user_id`),
   CONSTRAINT `question_companies_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -353,7 +353,7 @@ CREATE TABLE `question_companies` (
 
 LOCK TABLES `question_companies` WRITE;
 /*!40000 ALTER TABLE `question_companies` DISABLE KEYS */;
-INSERT INTO `question_companies` VALUES (11,3,'pertanyaan 1','1234','test@gmail.com',0,'2024-01-01 04:00:24','2024-01-02 13:31:17'),(12,3,'pertanyaan 2','456','Tester@gmail.com',0,'2024-01-01 04:30:00','2024-01-01 04:51:17'),(13,3,'Pertanyaan 3','123','test@gmail.com',0,'2024-01-02 03:45:34','2024-01-02 12:29:37');
+INSERT INTO `question_companies` VALUES (11,3,'pertanyaan 1','1234','test@gmail.com',1,'2024-01-01 04:00:24','2024-01-07 03:47:08'),(12,3,'pertanyaan 2','456','Tester@gmail.com',0,'2024-01-01 04:30:00','2024-01-01 04:51:17'),(13,3,'Pertanyaan 3','123','test@gmail.com',0,'2024-01-02 03:45:34','2024-01-02 12:29:37'),(14,3,'test','1234','test@gmail.com',NULL,'2024-01-07 03:56:15','2024-01-07 03:56:15');
 /*!40000 ALTER TABLE `question_companies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -394,17 +394,15 @@ CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` bigint unsigned NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_role_id` (`role_id`),
   CONSTRAINT `users_role_id` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -413,7 +411,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'Reynaldi Rizky','rey@gmail.com',NULL,'$2y$10$m6F0dWvB6qYmUTOo9dSwZOiXLAP7.KVkqIgHSpRxACjSw4DvVijW2',2,NULL,'2023-12-13 07:34:45','2023-12-13 07:34:45'),(3,'Aliftyan','alif@gmail.com',NULL,'$2y$10$2B8NAsVGqy99SGkv7Ul7s.458I4E0gUh9ywL6PVNpnf36eNits0L.',1,NULL,'2023-12-13 07:51:59','2023-12-13 07:51:59'),(4,'adel','adel@gmail.com',NULL,'$2y$10$bmOv9W72gZBdbtHygyQDJu6bAeCPz5.zog9edfWwOfH64yDIZ2iC2',1,NULL,'2023-12-13 19:59:22','2023-12-13 19:59:22');
+INSERT INTO `users` VALUES (2,'Reynaldi Rizky','admin@gmail.com','$2y$10$m6F0dWvB6qYmUTOo9dSwZOiXLAP7.KVkqIgHSpRxACjSw4DvVijW2',2,'2023-12-13 07:34:45','2023-12-13 07:34:45'),(3,'Aliftyan','alif@gmail.com','$2y$10$2B8NAsVGqy99SGkv7Ul7s.458I4E0gUh9ywL6PVNpnf36eNits0L.',1,'2023-12-13 07:51:59','2023-12-13 07:51:59'),(4,'adel','adel@gmail.com','$2y$10$bmOv9W72gZBdbtHygyQDJu6bAeCPz5.zog9edfWwOfH64yDIZ2iC2',1,'2023-12-13 19:59:22','2023-12-13 19:59:22'),(5,'angga','angga@gmail.com','$2y$10$67iQwCyWomoiFVC3xEoGBO/fdRO4yf4t1wpJ7fNfF.b1a.v7Jyzw2',1,'2024-01-03 11:12:01','2024-01-03 11:12:01');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -430,4 +428,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-03 12:50:26
+-- Dump completed on 2024-01-31 14:07:45
