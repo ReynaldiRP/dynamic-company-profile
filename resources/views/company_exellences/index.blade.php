@@ -3,7 +3,7 @@
     <div class="w-full h-full p-6 mx-auto rounded-2xl">
         <div class="flex flex-col gap-4">
             <div class="w-full flex justify-center p-3 bg-white shadow-soft-lg rounded-lg font-poppins {{ asset('') }}">
-                <h3>Tambah Keunggulan Perusahaan</h3>
+                <h3>Keunggulan Perusahaan</h3>
             </div>
             {{-- Form Company Profile --}}
             <section class="h-full flex flex-col  bg-white shadow-soft-lg rounded-lg font-poppins">
@@ -67,9 +67,9 @@
                                     <th
                                         class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Deskripsi Keunggulan Perusahaan</th>
-                                    <th
+                                    {{-- <th
                                         class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                        Gambar Keunggulan Perusahaan</th>
+                                        Gambar Keunggulan Perusahaan</th> --}}
                                     <th
                                         class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Aksi</th>
@@ -90,11 +90,11 @@
                                                 {{ Str::limitWords($item->description, 10) }}
                                             </p>
                                         </td>
-                                        <td
+                                        {{-- <td
                                             class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                                             <img class="inline-flex items-center justify-center w-20 h-20 mr-2 text-white transition-all duration-200 ease-in-out text-sm rounded-xl"
                                                 src="{{ $item->image_url }}" alt="default img">
-                                        </td>
+                                        </td> --}}
                                         <td class="p-8 gap-4 flex justify-center">
                                             <x-button-edit href="{{ route('company_excellences.edit', $item->id) }}" />
                                             <form action="{{ route('company_excellences.destroy', $item->id) }}"

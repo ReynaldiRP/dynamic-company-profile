@@ -78,9 +78,9 @@
                                     <th
                                         class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Gambar Proyek Perusahaan</th>
-                                    <th
+                                    {{-- <th
                                         class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                        Deskripsi Proyek Perusahaan</th>
+                                        Deskripsi Proyek Perusahaan</th> --}}
                                     <th
                                         class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Aksi</th>
@@ -106,12 +106,12 @@
                                             <img class="inline-flex items-center justify-center w-20 h-20 mr-2 text-white transition-all duration-200 ease-in-out text-sm rounded-xl"
                                                 src="{{ $item->image_url }}" alt="default img">
                                         </td>
-                                        <td
+                                        {{-- <td
                                             class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                             <p class="mb-0 leading-tight text-xs text-slate-400 text-center">
                                                 {{ $item->description }}
                                             </p>
-                                        </td>
+                                        </td> --}}
                                         <td class="p-8 gap-4 flex justify-center">
                                             <x-button-edit href="{{ route('company_projects.edit', $item->id) }}" />
                                             <form action="{{ route('company_projects.destroy', $item->id) }}"
